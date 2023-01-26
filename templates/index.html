@@ -11,8 +11,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'img/webcheap2-nobg.png' %}" rel="icon">
+  <link href="{% static 'img/webcheap2-nobg.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,9 +43,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="." class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="{% static 'img/webcheap2-nobg.png' %}" alt="">
         <h1>Webcheap<span>.</span></h1>
       </a>
 
@@ -58,7 +58,7 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="https://wa.me/+2349131860604?text=I%20need%20a%20website" target=”_blank”> <i class="icon bi bi-whatsapp"></i><span class="d-sm-inline d-none ms-2">WhatsApp</span></a>
+      <a class="btn-book-a-table d-sm-inline d-none" href="https://wa.me/+2349131860604?text=I%20need%20a%20website" target=”_blank”> <i class="icon bi bi-whatsapp" style="font-size: 1.2em;"></i><span class="ms-2">WhatsApp</span></a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -74,7 +74,7 @@
           <h2 data-aos="fade-up">Do you need a Website?</h2>
           <p data-aos="fade-up" data-aos-delay="100">Create your dream site with us - swift response and satisfaction guaranteed before complete payment!</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://wa.me/+2349131860604?text=I%20need%20a%20website" target=”_blank” class="btn-book-a-table"><i class="icon bi bi-whatsapp me-2"></i>WhatsApp</a>
+            <a href="https://wa.me/+2349131860604?text=I%20need%20a%20website" target=”_blank” class="btn-book-a-table"><i class="icon bi bi-whatsapp me-2" style="font-size: 1.2em;"></i>WhatsApp</a>
             <a href="mailto:support@webcheap.xyz" target=”_blank” class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-envelope"></i><span>Email Us</span></a>
           </div>
         </div>
@@ -344,27 +344,29 @@
         <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets/img/events-1.jpg)">
-              <h3>Custom Parties</h3>
-              <div class="price align-self-start">$99</div>
-              <p class="description">
-                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url({% static 'img/cdssenugu.png' %})">
+              <h3>School Management System</h3>
+              <!-- <div class="price align-self-start">$99</div> -->
+              <p class="description pt-2">
+                Full featured school portal with admin section and teacher section. 
+                Eased the process of result compilation, student admission, class attendance and many more.
               </p>
             </div><!-- End Event item -->
 
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets/img/events-2.jpg)">
-              <h3>Private Parties</h3>
-              <div class="price align-self-start">$289</div>
-              <p class="description">
-                In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url({% static 'img/phone-advisory.png' %})">
+              <h3>Phone Advisory System</h3>
+              <!-- <div class="price align-self-start">$289</div> -->
+              <p class="description pt-2">
+                Phone advisory system with search and filter functionality.
+                Improved the process of finding mobile phones with the help of a content based recommendation system.
               </p>
             </div><!-- End Event item -->
 
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets/img/events-3.jpg)">
-              <h3>Birthday Parties</h3>
-              <div class="price align-self-start">$499</div>
-              <p class="description">
-                Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam. Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url({% static 'img/poll-app.png' %})">
+              <h3>Poll Management Application</h3>
+              <!-- <div class="price align-self-start">$499</div> -->
+              <p class="description pt-2">
+                Polling App with create, read, update and delete (CRUD) functionality. Makes it easy to create and manage polls.
               </p>
             </div><!-- End Event item -->
 
@@ -436,20 +438,21 @@
 
         </div>
 
-        <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form action="/" method="post" role="form" class="php-email-form p-3 p-md-4">
+          {% csrf_token %}
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
             </div>
             <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Your WhatsApp">
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
           </div>
           <div class="my-3">
             <div class="loading">Loading</div>
@@ -457,7 +460,7 @@
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
-        </form> -->
+        </form>
         <!--End Contact Form -->
 
       </div>
@@ -527,6 +530,7 @@
   <!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="https://wa.me/+2349131860604?text=I%20need%20a%20website" target=”_blank” class="whatsapp-hang d-flex align-items-center justify-content-center"><i style="font-size: 2.5em;" class="icon bi bi-whatsapp"></i></a>
 
   <div id="preloader"></div>
 
